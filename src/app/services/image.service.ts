@@ -15,7 +15,7 @@ export class ImageService {
 		return this.http.get(ConstantData.API_URL + endpoint);
 	}
 
-	public getImage(id: string): Observable<Object> {
+	public getImage(id: string): Observable<any> {
 		const endpoint = `images/${id}`;
 		return this.http.get(ConstantData.API_URL + endpoint);
 	}

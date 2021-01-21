@@ -26,8 +26,16 @@ export class HomeComponent implements OnInit {
 		this.loadingPicture = true;
 		this.imageService.getImage(id).subscribe(data => {
 			this.selectedPicture = data as IPicture;
+			this.selectedPicture.tagList = this.splitTags(data.tags);
 			console.log(this.selectedPicture)
 			this.loadingPicture = false;
 		})
+	}
+
+	private splitTags(tags: string): string[] {
+		// Remove the empty space that always comes at the end
+		tags = tags.trimEnd()
+		// Split the string into chunks
+		return tags.split(' ');
 	}
 }

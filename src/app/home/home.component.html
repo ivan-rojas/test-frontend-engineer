@@ -2,7 +2,8 @@
     <ng-container *ngIf="content; else loading">
         <div class="row">
             <div class="col text-center mb-4" *ngFor="let pic of content.pictures">
-                <img [src]="pic.cropped_picture" class="picture" (click)="getImage(pic.id)" data-toggle="modal" data-target="#pictureModal">
+                <img [src]="pic.cropped_picture" class="picture" (click)="getImage(pic.id)" data-toggle="modal"
+                    data-target="#pictureModal">
             </div>
         </div>
     </ng-container>
@@ -11,9 +12,9 @@
 <ng-template #loading>
     <div class="row mt-5">
         <div class="col text-center">
-            <div class="spinner-border text-light" role="status">
+            <div class="spinner-border" role="status">
                 <span class="sr-only">Loading...</span>
-            </div>   
+            </div>
         </div>
     </div>
 </ng-template>
@@ -25,22 +26,61 @@
                 <div class="row mt-4">
                     <div class="col text-center">
                         <h5>
-                            Hi modal
+                            Picture details
                         </h5>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <hr> 
+                        <hr>
                     </div>
                 </div>
-                <div class="row" *ngIf="selectedPicture; else loadingImage">
-                    <div class="col">
-                        <pinch-zoom>
-                            <img [src]="selectedPicture.full_picture" /> 
-                        </pinch-zoom>
+                <ng-container *ngIf="selectedPicture; else loadingImage">
+                    <div class="row">
+                        <div class="col">
+                            <pinch-zoom>
+                                <img [src]="selectedPicture.full_picture" />
+                            </pinch-zoom>
+                        </div>
                     </div>
-                </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <mat-chip-list>
+                                <mat-chip color="primary" selected *ngFor="let tag of selectedPicture.tagList">
+                                    {{tag}}
+                                </mat-chip>
+                            </mat-chip-list>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <mat-accordion color="accent">
+                                <mat-expansion-panel>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Information
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+
+                                    <mat-list>
+                                        <div mat-subheader>Author</div>
+                                        <mat-list-item>
+                                            <mat-icon mat-list-icon>assignment_ind</mat-icon>
+                                            <div mat-line>{{selectedPicture.author}}</div>
+                                        </mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <div mat-subheader>Camera model</div>
+                                        <mat-list-item>
+                                            <mat-icon mat-list-icon>photo_camera</mat-icon>
+                                            <div mat-line>{{selectedPicture.camera}}</div>
+                                        </mat-list-item>
+                                    </mat-list>
+
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>
@@ -49,9 +89,9 @@
 <ng-template #loadingImage>
     <div class="row mt-4">
         <div class="col text-center">
-            <div class="spinner-grow text-light text-center" role="status">
+            <div class="spinner-grow text-center" role="status">
                 <span class="sr-only">Loading...</span>
-            </div>        
+            </div>
         </div>
     </div>
 </ng-template>

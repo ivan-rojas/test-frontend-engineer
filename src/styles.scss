@@ -2,11 +2,11 @@
 
 body {
     height: 100%;
-    background: linear-gradient(#333, rgb(61, 61, 61)) fixed;
+    background: linear-gradient(whitesmoke, rgb(222, 245, 250)) fixed;
     background-repeat: no-repeat;
     background-size: cover;
 
-    color: whitesmoke;
+    color: #333;
     font-family: 'Heebo', Verdana, Geneva, Tahoma, sans-serif;
 
     overflow-x: hidden;
@@ -14,12 +14,10 @@ body {
 
 
 .modal-content {
-    background-color: #333;
+    background-color: whitesmoke;
     padding-bottom: 3rem;
 }
 
 hr {
-    background-color: whitesmoke;
+    background-color: #333;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -11,6 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptor } from './shared/auth/auth-interceptor';
 
+// Angular Material
+import { MatExpansionModule } from '@angular/material/expansion'
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatCommonModule } from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +28,12 @@ import { AuthInterceptor } from './shared/auth/auth-interceptor';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PinchZoomModule
+    PinchZoomModule,
+    MatExpansionModule,
+    MatCommonModule,
+    MatChipsModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS,

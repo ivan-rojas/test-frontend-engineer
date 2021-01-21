@@ -5,6 +5,7 @@ export interface IPicture {
     camera?: string;
     tags?: string;
     full_picture?: string;
+    tagList?: string[];
 }
 
 export interface IPicPage {
