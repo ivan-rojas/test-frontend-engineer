@@ -1,3 +1,10 @@
+.picture {
+    transition: 100ms;
+    border: 1px solid rgba(255, 255, 255, 0.027);
+}
+
 .picture:hover {
     cursor: pointer;
+    border-radius: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.486);
 }

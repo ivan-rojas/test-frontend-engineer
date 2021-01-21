@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timingSafeEqual } from 'crypto';
 import { IPicPage, IPicture } from '../core/entities';
 import { ImageService } from '../services/image.service';
 
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
 	}
 
 	public getImage(id: string): void {
+		this.selectedPicture = null;
 		this.loadingPicture = true;
 		this.imageService.getImage(id).subscribe(data => {
 			this.selectedPicture = data as IPicture;
