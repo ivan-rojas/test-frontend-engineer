@@ -1,27 +1,37 @@
-# FrontendTest
+# Frontend Engineer Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+Hi, my name is Iván. I really like your test and I have a lot of fun doing it. I didn't want to exceed by much the two hours you require to complete the test so there are some things that I couldn't fix (like the image flickering). 
+Thanks for this opportunity and I hope we can meet soon.
 
-## Development server
+## To run it
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`ng serve --o` to run it with the AngularCLI. 
 
-## Code scaffolding
+## To build it
+`ng build` to build the dist package.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## About the app
 
-## Build
+Preview the images in a grid display.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![Picture1](https://i.imgur.com/vl8T88d.png)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Move between pages with the navigation buttons.
 
-## Running end-to-end tests
+![Picture2](https://i.imgur.com/jyrijef.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+Click on the image that you want and see more of it. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Picture3](https://i.imgur.com/zMBWqyr.png)
+
+
+Zoom and pan.
+
+![Picture4](https://i.imgur.com/22IRGUS.png)
+
+
+Details like tags, author information and camera model and actions such as navigation between the images on the page and sharing! (Twitter only)
+
+![Picture5](https://i.imgur.com/WaOHAYG.png)
