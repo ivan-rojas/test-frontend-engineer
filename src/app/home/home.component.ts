@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { timingSafeEqual } from 'crypto';
 import { IPicPage, IPicture } from '../core/entities';
 import { ImageService } from '../services/image.service';
 
