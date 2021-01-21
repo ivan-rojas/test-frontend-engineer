@@ -1,7 +1,7 @@
 # Frontend Engineer Test
 
-Hi, my name is Iván. I really like your test and I have a lot of fun doing it. I didn't want to exceed by much the two hours you require to complete the test so there are some things that I couldn't fix (like the image flickering). 
-Thanks for this opportunity and I hope we can meet soon.
+Hi, my name is Iván. I really like your test and I have a lot of fun doing it. I didn't want to exceed by much the two hours you required to complete the test so there are some things that I couldn't fix (like the image flickering).
+Anyway, thank you so much for this opportunity and I hope we can meet soon.
 
 ## To run it
 
