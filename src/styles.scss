@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
+body {
+    height: 100%;
+    background: linear-gradient(#333, rgb(61, 61, 61)) fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: whitesmoke;
+    font-family: 'Heebo', Verdana, Geneva, Tahoma, sans-serif;
+
+    overflow-x: hidden;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
