@@ -15,6 +15,12 @@ export class HomeComponent implements OnInit {
 	public disablePrevButton: boolean = true;
 	public disableNextButton: boolean = false;
 
+	public disablePrevPicButton: boolean = false;
+	public disableNextPicButton: boolean = false;
+
+	private MIN_PIC_ARRAY: number = 0;
+	private MAX_PIC_ARRAY: number = 9;
+
 	constructor(private imageService: ImageService) { }
 
 	ngOnInit() {
@@ -23,12 +29,21 @@ export class HomeComponent implements OnInit {
 		})
 	}
 
-	public getImage(id: string): void {
+	public getImage(id: string, index: number): void {
 		this.selectedPicture = null;
+	
+		this.disablePrevPicButton = index === this.MIN_PIC_ARRAY;
+		this.disableNextPicButton = index === this.MAX_PIC_ARRAY;		
+
 		this.imageService.getImage(id).subscribe(data => {
 			this.selectedPicture = data as IPicture;
 			this.selectedPicture.tagList = this.splitTags(data.tags);
+			this.selectedPicture.index = index;
 		})
+	}
+
+	public changeImage(index: number): void {
+		this.getImage(this.content.pictures[index].id, index);
 	}
 
 	public changePage(pageNumber: number): void {

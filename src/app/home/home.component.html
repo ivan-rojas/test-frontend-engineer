@@ -1,8 +1,8 @@
 <div class="container">
     <ng-container *ngIf="content && content.pictures; else loading">
         <div class="row">
-            <div class="col text-center mb-4" *ngFor="let pic of content.pictures">
-                <img [src]="pic.cropped_picture" class="picture" (click)="getImage(pic.id)" data-toggle="modal"
+            <div class="col text-center mb-4" *ngFor="let pic of content.pictures; let i = index">
+                <img [src]="pic.cropped_picture" class="picture" (click)="getImage(pic.id, i)" data-toggle="modal"
                     data-target="#pictureModal">
             </div>
         </div>
@@ -96,6 +96,14 @@
 
                                 </mat-expansion-panel>
                             </mat-accordion>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-6 text-left">
+                            <button mat-button color="primary" [disabled]="disablePrevPicButton" (click)="changeImage(selectedPicture.index-1)">Previous picture</button>
+                        </div>
+                        <div class="col-6 text-right">
+                            <button mat-button color="primary" [disabled]="disableNextPicButton" (click)="changeImage(selectedPicture.index+1)">Next picture</button>
                         </div>
                     </div>
                 </ng-container>

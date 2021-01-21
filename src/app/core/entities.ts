@@ -6,6 +6,7 @@ export interface IPicture {
     tags?: string;
     full_picture?: string;
     tagList?: string[];
+    index?: number;
 }
 
 export interface IPicPage {
