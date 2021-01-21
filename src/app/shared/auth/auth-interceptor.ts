@@ -59,10 +59,3 @@ export class AuthInterceptor implements HttpInterceptor {
 		)
 	}
 }
-
-// return this.auth.getToken().pipe(
-// 	map(response => {
-// 		localStorage.setItem('aengine-api-token', response.token);
-// 		return response;
-// 	})
-// )

@@ -9,7 +9,7 @@ import { PinchZoomModule } from 'ngx-pinch-zoom';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthInterceptor } from './shared/auth/auth-interceptor.interceptor';
+import { AuthInterceptor } from './shared/auth/auth-interceptor';
 
 @NgModule({
   declarations: [
