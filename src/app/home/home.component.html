@@ -42,10 +42,16 @@
         <div class="modal-content">
             <div class="container">
                 <div class="row mt-4">
-                    <div class="col text-center">
-                        <h5>
+                    <div class="col-2"></div>
+                    <div class="col-8 text-center">
+                        <h5 class="mb-0 mt-2">
                             Picture details
                         </h5>
+                    </div>
+                    <div class="col-2">
+                        <button mat-icon-button data-dismiss="modal">
+                            <mat-icon>close</mat-icon>
+                        </button>
                     </div>
                 </div>
                 <div class="row">
@@ -98,11 +104,17 @@
                             </mat-accordion>
                         </div>
                     </div>
+                    
                     <div class="row mt-4">
-                        <div class="col-6 text-left">
+                        <div class="col-4 text-left">
                             <button mat-button color="primary" [disabled]="disablePrevPicButton" (click)="changeImage(selectedPicture.index-1)">Previous picture</button>
                         </div>
-                        <div class="col-6 text-right">
+                        <div class="col-4 text-center">
+                            <a mat-button color="warn" href="https://twitter.com/intent/tweet?text=Check%20this%20pic%21%20{{selectedPicture.full_picture}}" target="_blank">
+                                <mat-icon>share</mat-icon>
+                            </a>
+                        </div>
+                        <div class="col-4 text-right">
                             <button mat-button color="primary" [disabled]="disableNextPicButton" (click)="changeImage(selectedPicture.index+1)">Next picture</button>
                         </div>
                     </div>

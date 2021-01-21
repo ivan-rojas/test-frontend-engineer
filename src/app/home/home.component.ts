@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IPicPage, IPicture } from '../core/entities';
 import { ImageService } from '../services/image.service';
 
@@ -21,12 +22,16 @@ export class HomeComponent implements OnInit {
 	private MIN_PIC_ARRAY: number = 0;
 	private MAX_PIC_ARRAY: number = 9;
 
-	constructor(private imageService: ImageService) { }
+	constructor(private imageService: ImageService, private router: Router) { }
 
 	ngOnInit() {
 		this.imageService.getImages().subscribe(data => {
 			this.content = data as IPicPage;
 		})
+	}
+
+	public test(url: string): void {
+		this.router.navigateByUrl('https://twitter.com/intent/tweet?text=shet')
 	}
 
 	public getImage(id: string, index: number): void {

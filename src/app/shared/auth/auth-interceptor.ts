@@ -22,8 +22,6 @@ export class AuthInterceptor implements HttpInterceptor {
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		let token = localStorage.getItem('aengine-api-token');
 
-		console.log('Interceptor')
-
 		if(token) 
 		{
 			request = request.clone({
@@ -31,8 +29,6 @@ export class AuthInterceptor implements HttpInterceptor {
 					Authorization: token
 				})
 			});
-
-			console.log('Using existent token', token);
 		}
 
 		return next.handle(request).pipe(
@@ -48,7 +44,6 @@ export class AuthInterceptor implements HttpInterceptor {
 							});
 
 							localStorage.setItem('aengine-api-token', response.token);
-							console.log('Using a new token', response.token);
 							return next.handle(request);
 						})
 					)
