@@ -1,5 +1,5 @@
 <div class="container">
-    <ng-container *ngIf="content; else loading">
+    <ng-container *ngIf="content && content.pictures; else loading">
         <div class="row">
             <div class="col text-center mb-4" *ngFor="let pic of content.pictures">
                 <img [src]="pic.cropped_picture" class="picture" (click)="getImage(pic.id)" data-toggle="modal"
@@ -7,10 +7,28 @@
             </div>
         </div>
     </ng-container>
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-4 text-left">
+            <button mat-button [disabled]="disablePrevButton" (click)="changePage(content.page-1)">Previous page</button>
+        </div>
+        <div class="col-4 text-center mt-2">
+            <b *ngIf="content && content.page">
+                Page {{content.page}}
+            </b>
+        </div>
+        <div class="col-4 text-right">
+            <button mat-button [disabled]="disableNextButton" (click)="changePage(content.page+1)">Next page</button>
+        </div>
+    </div>
 </div>
 
 <ng-template #loading>
-    <div class="row mt-5">
+    <div class="row mt-5 mb-5">
         <div class="col text-center">
             <div class="spinner-border" role="status">
                 <span class="sr-only">Loading...</span>

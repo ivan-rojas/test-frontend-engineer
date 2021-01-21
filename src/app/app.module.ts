@@ -16,6 +16,7 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCommonModule } from '@angular/material/core';
 
 @NgModule({
@@ -33,7 +34,8 @@ import { MatCommonModule } from '@angular/material/core';
     MatCommonModule,
     MatChipsModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS,
